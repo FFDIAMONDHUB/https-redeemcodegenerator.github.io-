@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Redeem Code Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 80px;
+      background: #0d0d0d;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #1a1a1a;
+      padding: 30px 20px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      margin-top: -40px;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+    .btn {
+      width: 100%;
+      background: #262626;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+    .btn:hover {
+      background: #333;
+    }
+    #generateBtn {
+      background: #444;
+    }
+    #generateBtn.active {
+      background: #28a745;
+      color: #fff;
+      font-weight: bold;
+    }
+    #generateBtn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    #codeBox {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      background: #333;
+      padding: 12px;
+      border-radius: 12px;
+      display: none;
+    }
+    .ad-note {
+      font-size: 13px;
+      color: #ffcc00;
+      margin: 10px 0;
+    }
+    .ad-box {
+      margin-top: 10px;
+      background: #333;
+      padding: 15px;
+      border-radius: 12px;
+      color: #ccc;
+      font-size: 14px;
+      cursor: pointer;
+      border: 1px solid #555;
+    }
+    .ad-box:hover {
+      background: #444;
+      color: #fff;
+    }
+    .bottom-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #000;
+      z-index: 999;
+      text-align: center;
+      padding: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Free Redeem Code Generator</h1>
+    <p>Follow Instagram, Facebook & WhatsApp</p>
+
+    <button class="btn" onclick="openInSystemBrowser('https://www.instagram.com/freethings76?igsh=YWMwM2tyMW9yOHNn'); followed.instagram = true; checkAllDone();">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png"/> Follow us
+    </button>
+
+    <button class="btn" onclick="openInSystemBrowser('https://www.facebook.com/share/15HTDkWQGp/?mibextid=qi2Omg'); followed.facebook = true; checkAllDone();">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook--v1.png"/> Like
+    </button>
+
+    <button class="btn" onclick="openInSystemBrowser('https://whatsapp.com/channel/0029VbAnk4N5a242PLUDa100'); followed.whatsapp = true; checkAllDone();">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png"/> Join
+    </button>
+
+    <div class="ad-note">
+      🔒 Generate करने से पहले <b>किसी भी एक Ad पर क्लिक</b> करना जरूरी है!
+    </div>
+
+    <div class="ad-box" id="adBox">
+      🔔 Special Offer! Click here to unlock your reward
+    </div>
+
+    <button class="btn" id="generateBtn" onclick="generateCode()" disabled>
+      🎁 Generate
+    </button>
+
+    <div id="codeBox"></div>
+  </div>
+
+  <!-- 📌 Banner Ad -->
+  <div class="bottom-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'a1ae5d52e0f07a89e19a1ec958a64dd8',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/a1ae5d52e0f07a89e19a1ec958a64dd8/invoke.js"></script>
+  </div>
+
+  <!-- 🧲 Social Bar Ad -->
+  <script type='text/javascript' src='//pl26926850.profitableratecpm.com/02/b5/9a/02b59ad43b69730cc47eace447a80b9d.js'></script>
+
+  <script>
+    const followed = {
+      instagram: false,
+      facebook: false,
+      whatsapp: false
+    };
+    const clicked = {
+      ad: false
+    };
+
+    function checkAllDone() {
+      const btn = document.getElementById("generateBtn");
+      if (followed.instagram && followed.facebook && followed.whatsapp && clicked.ad) {
+        btn.disabled = false;
+        btn.classList.add("active");
+      }
+    }
+
+    function generateCode() {
+      const part1 = Math.random().toString(36).substring(2, 6).toUpperCase();
+      const part2 = Math.random().toString(36).substring(2, 6).toUpperCase();
+      const part3 = Math.floor(Math.random() * 9000 + 1000);
+      const code = `${part1}-${part2}-${part3}`;
+      document.getElementById("codeBox").innerText = code;
+      document.getElementById("codeBox").style.display = "block";
+    }
+
+    function openInSystemBrowser(url) {
+      window.open(url, '_blank');
+    }
+
+    // fix ad box click
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("adBox").addEventListener("click", function() {
+        clicked.ad = true;
+        checkAllDone();
+      });
+    });
+  </script>
+
+</body>
+</html>
