@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      padding-bottom: 80px;
+      padding-bottom: 100px;
       background: #0d0d0d;
       font-family: Arial, sans-serif;
       color: #ffffff;
@@ -85,19 +85,11 @@
       color: #ffcc00;
       margin: 10px 0;
     }
-    .ad-box {
+    .confirm-btn {
+      background: #ffcc00;
+      color: #000;
+      font-weight: bold;
       margin-top: 10px;
-      background: #333;
-      padding: 15px;
-      border-radius: 12px;
-      color: #ccc;
-      font-size: 14px;
-      cursor: pointer;
-      border: 1px solid #555;
-    }
-    .ad-box:hover {
-      background: #444;
-      color: #fff;
     }
     .bottom-banner {
       position: fixed;
@@ -130,12 +122,13 @@
     </button>
 
     <div class="ad-note">
-      🔒 Generate करने से पहले <b>किसी भी एक Ad पर क्लिक</b> करना जरूरी है!
+      🔒 Generate करने से पहले नीचे के Ad पर क्लिक करें और फिर नीचे दिए गए बटन को दबाएं:
     </div>
 
-    <div class="ad-box" id="adBox">
-      🔔 Special Offer! Click here to unlock your reward
-    </div>
+    <!-- Confirmation button -->
+    <button class="btn confirm-btn" onclick="clicked.ad = true; checkAllDone();">
+      ✅ मैंने Ad पर क्लिक किया है
+    </button>
 
     <button class="btn" id="generateBtn" onclick="generateCode()" disabled>
       🎁 Generate
@@ -191,14 +184,6 @@
     function openInSystemBrowser(url) {
       window.open(url, '_blank');
     }
-
-    // fix ad box click
-    document.addEventListener("DOMContentLoaded", function() {
-      document.getElementById("adBox").addEventListener("click", function() {
-        clicked.ad = true;
-        checkAllDone();
-      });
-    });
   </script>
 
 </body>
